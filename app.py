@@ -12,6 +12,8 @@ import os
 genai.configure(api_key = os.getenv("GOOGLE-API-KEY"))
 
 # Create the Streamlit Front End Page
+headers = {"authorisation":st.secrets["GOOGLE-API-KEY"],"content-type":"applications/json"}
+
 st.set_page_config("Gemini APP")
 st.header("Image Annotation using Gemini Flash")
 input = st.text_input("Input Prompt: ", key = "input")
